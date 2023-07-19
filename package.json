@@ -9,8 +9,7 @@
     "build:dev": "webpack --env mode=development",
     "lint": "npx eslint ./src",
     "lint:fix": "npx eslint ./src --fix",
-    "prepare": "husky install",
-    "commit": "cz"
+    "commit": "npx cz"
   },
   "keywords": [],
   "author": "",
@@ -31,8 +30,6 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "html-webpack-plugin": "^5.5.3",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
     "mini-css-extract-plugin": "^2.7.6",
     "prettier": "^3.0.0",
     "sass": "^1.63.6",

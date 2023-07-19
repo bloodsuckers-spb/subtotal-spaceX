@@ -1,12 +1,26 @@
 .content {
   padding-top: 80px;
+  max-width: 1280px;
 }
 
 .heading {
+  position: relative;
   padding: 10px;
   display: flex;
+  flex-direction: row;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.selectBox {
+  justify-self: flex-end;
+  @media (max-width: 768px) {
+    order: -1;
+  }
 }
 
 .cards {

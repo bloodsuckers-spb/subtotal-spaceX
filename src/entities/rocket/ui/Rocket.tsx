@@ -15,11 +15,15 @@ export const Rocket = ({ id, title, details }: Props) => {
     return <CircularIndeterminate />;
   }
 
+  const photoRandomIndex = Math.floor(
+    Math.random() * (data?.flickr_images.length ?? 0)
+  );
+
   return (
     <ImgMediaCard
       title={title}
       details={details}
-      imageUrl={data?.flickr_images[1] ?? ''}
+      imageUrl={data?.flickr_images[photoRandomIndex] ?? ''}
     />
   );
 };

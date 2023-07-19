@@ -36,31 +36,33 @@ export const SpaceX = () => {
   };
 
   return (
-      <div className={styles.content}>
-        <div className={styles.heading}>
-          <Pagination
-            count={data?.totalPages}
-            page={currentPage}
-            onChange={handleChange}
-          />
+    <div className={styles.content}>
+      <div className={styles.heading}>
+        <Pagination
+          count={data?.totalPages}
+          page={currentPage}
+          onChange={handleChange}
+        />
+        <div className={styles.selectBox}>
           <BasicSelect
             onSelectChange={onSelectChange}
             options={['desc', 'asc']}
             currentOption={dateUTCSort}
           />
         </div>
-        <div className={styles.cards}>
-          {data?.docs.map(({ name, details, rocket }) => {
-            return (
-              <Rocket
-                key={name}
-                id={rocket}
-                title={name}
-                details={details}
-              />
-            );
-          })}
-        </div>
       </div>
+      <div className={styles.cards}>
+        {data?.docs.map(({ name, details, rocket }) => {
+          return (
+            <Rocket
+              key={name}
+              id={rocket}
+              title={name}
+              details={details}
+            />
+          );
+        })}
+      </div>
+    </div>
   );
 };
