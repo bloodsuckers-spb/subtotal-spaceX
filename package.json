@@ -9,6 +9,7 @@
     "build:dev": "webpack --env mode=development",
     "lint": "npx eslint ./src",
     "lint:fix": "npx eslint ./src --fix",
+    "prepare": "husky install",
     "commit": "cz"
   },
   "keywords": [],
