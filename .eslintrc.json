@@ -47,5 +47,6 @@
         "newlines-between": "always-and-inside-groups"
       }
     ]
-  }
+  },
+  "ignorePatterns": ["config", "webpack.config.ts"]
 }
