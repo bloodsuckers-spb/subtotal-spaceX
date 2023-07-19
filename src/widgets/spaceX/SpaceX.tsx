@@ -1,40 +1,66 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 
 import Pagination from '@mui/material/Pagination';
 
-import { useLazyGetLaunchesQuery } from 'entities/launch';
+import { useGetLaunchesQuery } from 'entities/launch';
 import { Rocket } from 'entities/rocket';
+
+import { BasicSelect, CircularIndeterminate } from 'shared/ui';
+
+import { type SelectChangeEvent } from '@mui/material/Select';
 
 import styles from './SpaceX.module.scss';
 
 export const SpaceX = () => {
-  const [trigger, result] = useLazyGetLaunchesQuery();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [dateUTCSort, setDateUTCSort] = useState<'desc' | 'asc'>('desc');
 
-  const { isFetching, data } = result;
-
-  useEffect(() => {
-    trigger({ date_utc_sort: 'desc' }, true);
-  }, []);
+  const { data, isFetching } = useGetLaunchesQuery({
+    dateUTCSort,
+    currentPage,
+  });
 
   if (isFetching) {
-    return <div>Loading...</div>;
+    return <CircularIndeterminate />;
   }
 
+  const handleChange = (event: React.ChangeEvent<unknown>, page: number) => {
+    event.preventDefault();
+    setCurrentPage(page);
+  };
+
+  const onSelectChange = ({ target: { value } }: SelectChangeEvent) => {
+    if (value === 'desc' || value === 'asc') {
+      setDateUTCSort(value);
+    }
+  };
+
   return (
-    <>
-      <Pagination count={data?.totalPages} />
-      <div className={styles.cards}>
-        {data?.docs?.map(({ name, details, rocket }) => {
-          return (
-            <Rocket
-              key={name}
-              id={rocket}
-              title={name}
-              details={details}
-            />
-          );
-        })}
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <Pagination
+            count={data?.totalPages}
+            page={currentPage}
+            onChange={handleChange}
+          />
+          <BasicSelect
+            onSelectChange={onSelectChange}
+            options={['desc', 'asc']}
+            currentOption={dateUTCSort}
+          />
+        </div>
+        <div className={styles.cards}>
+          {data?.docs.map(({ name, details, rocket }) => {
+            return (
+              <Rocket
+                key={name}
+                id={rocket}
+                title={name}
+                details={details}
+              />
+            );
+          })}
+        </div>
       </div>
-    </>
   );
 };

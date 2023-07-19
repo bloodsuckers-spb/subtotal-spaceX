@@ -3,7 +3,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { type LaunchesQueryResult } from '../../types';
 
 type UseLazyQueryOptions = {
-  date_utc_sort: 'desc' | 'asc';
+  dateUTCSort: 'desc' | 'asc';
+  currentPage: number;
 };
 
 export const launchApi = createApi({
@@ -14,7 +15,7 @@ export const launchApi = createApi({
 
   endpoints: (build) => ({
     getLaunches: build.query<LaunchesQueryResult, UseLazyQueryOptions>({
-      query: ({ date_utc_sort }) => {
+      query: ({ dateUTCSort, currentPage }) => {
         return {
           url: 'v5/launches/query',
           method: 'POST',
@@ -28,8 +29,9 @@ export const launchApi = createApi({
             },
             options: {
               sort: {
-                date_utc: date_utc_sort,
+                date_utc: dateUTCSort,
               },
+              page: currentPage,
             },
           }),
         };
@@ -38,4 +40,4 @@ export const launchApi = createApi({
   }),
 });
 
-export const { useGetLaunchesQuery, useLazyGetLaunchesQuery } = launchApi;
+export const { useGetLaunchesQuery } = launchApi;

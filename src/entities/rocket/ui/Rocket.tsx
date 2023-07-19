@@ -1,6 +1,6 @@
-import { useGetRocketByIdQuery } from '../model/services';
+import { ImgMediaCard, CircularIndeterminate } from 'shared/ui';
 
-import { ImgMediaCard } from 'shared/ui';
+import { useGetRocketByIdQuery } from '../model/services';
 
 type Props = {
   id: string;
@@ -12,7 +12,7 @@ export const Rocket = ({ id, title, details }: Props) => {
   const { data, isFetching } = useGetRocketByIdQuery(id);
 
   if (isFetching) {
-    return <div>Load...</div>;
+    return <CircularIndeterminate />;
   }
 
   return (
