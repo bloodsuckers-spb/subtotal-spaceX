@@ -1,4 +1,5 @@
 import { StoreProvider } from './store-provider';
+import CssBaseline from '@mui/material/CssBaseline';
 
 type WithChildren = { children?: React.ReactNode };
 
@@ -16,4 +17,4 @@ const compose = (...providers: Provider[]) => {
   };
 };
 
-export const AppProvider = compose(StoreProvider);
+export const AppProvider = compose(StoreProvider, CssBaseline);

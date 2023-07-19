@@ -1,6 +1,8 @@
-import { SpaceX } from 'entities/launch/ui';
-
 import { AppProvider } from './providers';
+
+import { SpaceX } from 'widgets';
+
+import './index.scss';
 
 export const App = () => {
   return (

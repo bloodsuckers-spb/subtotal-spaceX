@@ -1,1 +1,1 @@
-export * from './launchesApi';
+export * from './launchApi';

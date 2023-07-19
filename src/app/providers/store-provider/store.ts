@@ -1,9 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import { launchesApi } from 'entities/launch';
+import { launchApi } from 'entities/launch';
+import { rocketsApi } from 'entities/rocket';
 
 const rootReducer = combineReducers({
-  [launchesApi.reducerPath]: launchesApi.reducer,
+  [launchApi.reducerPath]: launchApi.reducer,
+  [rocketsApi.reducerPath]: rocketsApi.reducer,
 });
 
 export const setupStore = () => {
@@ -11,7 +13,9 @@ export const setupStore = () => {
     reducer: rootReducer,
 
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(launchesApi.middleware),
+      getDefaultMiddleware()
+        .concat(launchApi.middleware)
+        .concat(rocketsApi.middleware),
   });
 };
 
