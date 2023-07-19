@@ -11,6 +11,7 @@
   gap: 10px;
   align-items: center;
   justify-content: space-between;
+  animation: fadeIn 1s;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -28,4 +29,13 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
