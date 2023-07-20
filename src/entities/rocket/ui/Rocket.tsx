@@ -16,7 +16,7 @@ type Props = {
   date_utc: string;
 };
 
-export const Rocket = ({ id, title, details }: Props) => {
+export const Rocket = ({ id, title, details, date_utc }: Props) => {
   const { data, isFetching } = useGetRocketByIdQuery(id);
 
   if (isFetching) {
@@ -26,6 +26,10 @@ export const Rocket = ({ id, title, details }: Props) => {
   const photoRandomIndex = Math.floor(
     Math.random() * (data?.flickr_images.length ?? 0)
   );
+
+  console.log(date_utc);
+
+  // \d{4}-\d{2}-\d{2}
 
   return (
     <div className={styles.card}>
@@ -43,6 +47,13 @@ export const Rocket = ({ id, title, details }: Props) => {
             component="div"
           >
             {title}
+          </Typography>
+          <Typography
+            gutterBottom
+            variant="subtitle2"
+            component="div"
+          >
+            {date_utc.match(/\d{4}-\d{2}-\d{2}/)?.toString()}
           </Typography>
           <Typography
             variant="body2"
