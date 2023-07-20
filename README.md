@@ -12,7 +12,7 @@ _Команда для запуска тестов: `npm run test`_
 
 https://prismatic-khapse-f428bb.netlify.app/
 
-## Технологий стек
+## Технологический стек
 
 - React
 - Redux Toolkit / RTK Query
