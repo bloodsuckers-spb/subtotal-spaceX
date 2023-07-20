@@ -37,5 +37,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [babelLoader, typescriptLoader, cssLoader];
+  const assetsResource = {
+    test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
+    type: isDev ? 'asset/resource' : 'asset',
+  };
+
+  return [babelLoader, typescriptLoader, cssLoader, assetsResource];
 }

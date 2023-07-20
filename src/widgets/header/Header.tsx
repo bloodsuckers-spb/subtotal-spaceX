@@ -1,3 +1,5 @@
+import logo from 'assets/sprite.svg';
+
 import styles from './Header.module.scss';
 
 export const Header = () => {
@@ -8,7 +10,7 @@ export const Header = () => {
     >
       <div className={styles.wrapper}>
         <svg className={styles.icon}>
-          <use href="sprite.svg#SpaceXLogo"></use>
+          <use href={`${logo}#SpaceXLogo`}></use>
         </svg>
       </div>
     </header>
