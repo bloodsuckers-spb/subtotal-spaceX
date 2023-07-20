@@ -23,6 +23,61 @@ export const launchesData = {
       details:
         "SpaceX's 16th Crew Resupply Mission on behalf of NASA, with a total of 20 contracted flights. This will bring essential supplies",
     },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'SSO-A',
+      date_utc: '2018-12-03T18:34:00.000Z',
+      details:
+        "SpaceX's nineteenth flight of 2018 will fly SSO-A: SmallSat Express out of Vandenberg SLC-4E for Spaceflight. SSO-A is a rideshare to sun synchronus low earth orbit consisting of 64 individual microsatellites and cubesats. It is also likely to be the third flight of core B1046 which previously flew Bangabandhu-1 and Merah Putih. If this happens it will be the first time a Falcon 9 has flown more than two missions. ",
+    },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'Es hail 2',
+      date_utc: '2018-11-15T20:46:00.000Z',
+      details: '',
+    },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'SAOCOM 1A',
+      date_utc: '2018-10-07T19:22:00-07:00',
+      details: '',
+    },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'Telstar 18V',
+      date_utc: '"2018-09-10T04:45:00.000Z"',
+      details: '',
+    },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'Merah Putih',
+      date_utc: '"2018-08-07T05:18:00.000Z"',
+      details: '',
+    },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'Iridium NEXT Mission 7',
+      date_utc: '2018-07-25T11:39:26.000Z',
+      details: '',
+    },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'Telstar 19V',
+      date_utc: '2018-07-22T05:50:00.000Z',
+      details: '',
+    },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'CRS-15',
+      date_utc: '2018-06-29T09:42:00.000Z',
+      details: '',
+    },
+    {
+      rocket: '5e9d0d95eda69973a809d1ec',
+      name: 'SES-12',
+      date_utc: '2018-06-04T04:45:00.000Z',
+      details: '',
+    },
   ],
-  totalPages: 1,
+  totalPages: 2,
 };

@@ -35,8 +35,6 @@ export const SpaceX = () => {
     }
   };
 
-  // console.log(data)
-
   return (
     <div className={styles.content}>
       <div className={styles.heading}>

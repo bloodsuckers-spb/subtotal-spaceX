@@ -31,7 +31,6 @@ export const BasicSelect = ({
             <MenuItem
               key={option}
               value={option}
-              data-testid={option}
             >
               {option}
             </MenuItem>
