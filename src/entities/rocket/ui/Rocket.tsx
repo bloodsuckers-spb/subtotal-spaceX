@@ -24,21 +24,22 @@ export const Rocket = ({ id, title, details, date_utc }: Props) => {
   }
 
   const photoRandomIndex = Math.floor(
-    Math.random() * (data?.flickr_images.length ?? 0)
+    Math.random() * (data?.flickr_images?.length ?? 0)
   );
 
-  console.log(date_utc);
-
-  // \d{4}-\d{2}-\d{2}
+  const imgUrl = data?.flickr_images?.[photoRandomIndex] ?? '';
 
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      data-testid="card"
+    >
       <Card sx={{ maxWidth: 300 }}>
         <CardMedia
           component="img"
           alt=""
           height="140"
-          image={data?.flickr_images[photoRandomIndex] ?? ''}
+          image={imgUrl}
         />
         <CardContent>
           <Typography

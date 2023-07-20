@@ -6,7 +6,7 @@ import styles from './CircularIndeterminate.module.scss';
 
 export const CircularIndeterminate = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="circular-indeterminate">
       <Box sx={{ display: 'flex' }}>
         <CircularProgress />
       </Box>

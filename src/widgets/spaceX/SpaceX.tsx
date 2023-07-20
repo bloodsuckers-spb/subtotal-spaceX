@@ -35,6 +35,8 @@ export const SpaceX = () => {
     }
   };
 
+  // console.log(data)
+
   return (
     <div className={styles.content}>
       <div className={styles.heading}>
@@ -42,6 +44,7 @@ export const SpaceX = () => {
           count={data?.totalPages}
           page={currentPage}
           onChange={handleChange}
+          data-testid="pagination"
         />
         <div className={styles.selectBox}>
           <BasicSelect

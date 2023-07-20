@@ -25,11 +25,13 @@ export const BasicSelect = ({
           value={currentOption}
           label="Sorting"
           onChange={onSelectChange}
+          data-testid="basic-select"
         >
           {options.map((option) => (
             <MenuItem
               key={option}
               value={option}
+              data-testid={option}
             >
               {option}
             </MenuItem>
