@@ -52,13 +52,14 @@ export const SpaceX = () => {
         </div>
       </div>
       <div className={styles.cards}>
-        {data?.docs.map(({ name, details, rocket }) => {
+        {data?.docs.map(({ name, details, rocket, date_utc }) => {
           return (
             <Rocket
               key={name}
               id={rocket}
               title={name}
               details={details}
+              date_utc={date_utc}
             />
           );
         })}
