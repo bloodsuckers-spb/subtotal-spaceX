@@ -24,7 +24,7 @@ export const launchApi = createApi({
             query: {
               date_utc: {
                 $gte: '2015-01-01T00:00:00.000Z',
-                $lte: '2019-01-01T00:00:00.000Z',
+                $lte: '2020-01-01T00:00:00.000Z',
               },
             },
             options: {
